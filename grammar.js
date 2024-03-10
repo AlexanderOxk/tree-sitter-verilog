@@ -203,6 +203,12 @@ const rules = {
     optseq('(', $.list_of_actual_arguments, ')')
   ),
 
+  text_macro_call_usage: $ => seq(
+    '`',
+    $.text_macro_identifier,
+   '(', $.list_of_actual_arguments, ')',
+  ),
+
   simple_text_macro_usage: $ => seq(
     '`',
     $.text_macro_identifier
@@ -3021,6 +3027,7 @@ const rules = {
     seq($.nonblocking_assignment, ';'),
     seq($.procedural_continuous_assignment, ';'),
     seq($.system_tf_call, ';'),
+    $.text_macro_call_usage,
     $.case_statement,
     $.conditional_statement,
     seq($.inc_or_dec_expression, ';'),
