@@ -40,3 +40,57 @@ endclass
     )
   ))
 )))
+
+============================================
+uvm - macro call
+============================================
+
+class c;
+  virtual function f;
+    `uvm_info("hello")
+  endfunction
+endclass
+
+----
+
+(source_file
+  (package_or_generate_item_declaration
+    (class_declaration
+      (class_identifier
+        (simple_identifier))
+      (class_item
+        (class_method
+          (method_qualifier)
+          (function_declaration
+            (function_body_declaration
+              (function_identifier
+                (function_identifier
+                  (simple_identifier)))
+              (function_statement_or_null
+                (function_statement
+                  (statement
+                    (statement_item
+                      (text_macro_call_usage
+                        (text_macro_identifier
+                          (simple_identifier))
+                        (list_of_actual_arguments
+                          (expression
+                            (primary
+                              (primary_literal
+                                (string_literal)
+                              )
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+)

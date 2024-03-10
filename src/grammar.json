@@ -277,6 +277,31 @@
         }
       ]
     },
+    "text_macro_call_usage": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "`"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "text_macro_identifier"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SYMBOL",
+          "name": "list_of_actual_arguments"
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
     "simple_text_macro_usage": {
       "type": "SEQ",
       "members": [
@@ -20333,6 +20358,10 @@
               "value": ";"
             }
           ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "text_macro_call_usage"
         },
         {
           "type": "SYMBOL",

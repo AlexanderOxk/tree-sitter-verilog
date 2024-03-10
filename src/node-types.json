@@ -11719,6 +11719,10 @@
           "named": true
         },
         {
+          "type": "text_macro_call_usage",
+          "named": true
+        },
+        {
           "type": "wait_statement",
           "named": true
         }
@@ -12048,6 +12052,25 @@
         },
         {
           "type": "terminal_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "text_macro_call_usage",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_of_actual_arguments",
+          "named": true
+        },
+        {
+          "type": "text_macro_identifier",
           "named": true
         }
       ]

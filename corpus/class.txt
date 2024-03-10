@@ -1,0 +1,43 @@
+============================================
+class - with constructor
+============================================
+
+class c extends parent_c;
+  function new(string name);
+    super.new(name);
+  endfunction
+endclass
+
+----
+
+(source_file
+  (package_or_generate_item_declaration
+    (class_declaration
+      (class_identifier
+        (simple_identifier))
+      (class_type
+        (class_identifier
+          (simple_identifier)))
+      (class_item
+        (class_method
+          (class_constructor_declaration
+            (tf_port_list
+              (tf_port_item1
+                (data_type_or_implicit1
+                  (data_type))
+                (port_identifier
+                  (simple_identifier))))
+            (list_of_arguments_parent
+              (expression
+                (primary
+                  (simple_identifier)
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+)
+
