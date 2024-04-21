@@ -26472,8 +26472,54 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "tf_call"
+          "type": "PREC_RIGHT",
+          "value": 0,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "PREC_LEFT",
+                    "value": 0,
+                    "content": {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "ps_class_identifier"
+                        },
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "SYMBOL",
+                              "name": "parameter_value_assignment"
+                            },
+                            {
+                              "type": "BLANK"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "::"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              },
+              {
+                "type": "SYMBOL",
+                "name": "tf_call"
+              }
+            ]
+          }
         },
         {
           "type": "SYMBOL",
@@ -32353,6 +32399,19 @@
       "packed_dimension",
       "_constant_part_select_range",
       "_part_select_range"
+    ],
+    [
+      "class_type",
+      "subroutine_call",
+      "package_scope"
+    ],
+    [
+      "subroutine_call",
+      "package_scope"
+    ],
+    [
+      "class_type",
+      "tf_call"
     ]
   ],
   "precedences": [],

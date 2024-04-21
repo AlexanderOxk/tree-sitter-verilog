@@ -11866,11 +11866,23 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
+          "type": "class_identifier",
+          "named": true
+        },
+        {
           "type": "method_call",
+          "named": true
+        },
+        {
+          "type": "package_scope",
+          "named": true
+        },
+        {
+          "type": "parameter_value_assignment",
           "named": true
         },
         {

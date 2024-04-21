@@ -3995,7 +3995,14 @@ const rules = {
   )),
 
   subroutine_call: $ => choice(
-    $.tf_call,
+    prec.right(seq(
+      optseq(
+        $.ps_class_identifier,
+        optional($.parameter_value_assignment),
+        '::'
+      ),
+      $.tf_call
+    )),
     $.system_tf_call,
     $.method_call,
     seq(optseq('std', '::'), $.randomize_call)
@@ -4992,5 +4999,8 @@ module.exports = grammar({
     [$.let_expression, $.primary, $.variable_lvalue, $.nonrange_variable_lvalue, $._sequence_identifier],
     [$.sequence_instance, $.clockvar, $.tf_call, $.primary],
     [$.unpacked_dimension, $.packed_dimension, $._constant_part_select_range, $._part_select_range],
+    [$.class_type, $.subroutine_call, $.package_scope],
+    [$.subroutine_call, $.package_scope],
+    [$.class_type, $.tf_call]
   ],
 });
