@@ -3026,12 +3026,11 @@ const rules = {
     seq($.blocking_assignment, ';'),
     seq($.nonblocking_assignment, ';'),
     seq($.procedural_continuous_assignment, ';'),
-    seq($.system_tf_call, ';'),
     $.text_macro_call_usage,
     $.case_statement,
     $.conditional_statement,
     seq($.inc_or_dec_expression, ';'),
-    // $.subroutine_call_statement,
+    $._subroutine_call_statement,
     $.disable_statement,
     $.event_trigger,
     $.loop_statement,
@@ -3322,7 +3321,7 @@ const rules = {
 
   // A.6.9 Subroutine call statements
 
-  subroutine_call_statement: $ => choice(
+  _subroutine_call_statement: $ => choice(
     seq($.subroutine_call, ';'),
     seq('void\'', '(', $.function_subroutine_call, ')', ';')
   ),
@@ -3992,17 +3991,6 @@ const rules = {
     $.system_tf_identifier,
     optional(choice(
       $.list_of_arguments_parent,
-      seq(
-        '(',
-        choice(
-          seq($.data_type, optseq(',', $.expression)),
-          prec.left(seq(
-            sep1(',', $.expression),
-            optseq(',', optional($.clocking_event))
-          ))
-        ),
-        ')'
-      )
     ))
   )),
 
@@ -4997,5 +4985,12 @@ module.exports = grammar({
     [$.event_expression, $.expression_or_dist, $.let_actual_arg],
     [$.module_path_primary, $.primary],
     [$.module_path_primary, $.primary_literal],
+    [$.sequence_instance, $.let_expression, $.clockvar, $.tf_call, $.primary, $.variable_lvalue, $.nonrange_variable_lvalue, $.generate_block_identifier, $._sequence_identifier],
+    [$.sequence_instance, $.clockvar, $.tf_call, $.constant_primary, $.primary, $.variable_lvalue, $.nonrange_variable_lvalue, $.generate_block_identifier],
+    [$.variable_decl_assignment, $.tf_call],
+    [$.data_type, $.variable_decl_assignment, $.sequence_instance, $.clockvar, $.tf_call, $.constant_primary, $.primary, $.variable_lvalue, $.nonrange_variable_lvalue, $.generate_block_identifier],
+    [$.let_expression, $.primary, $.variable_lvalue, $.nonrange_variable_lvalue, $._sequence_identifier],
+    [$.sequence_instance, $.clockvar, $.tf_call, $.primary],
+    [$.unpacked_dimension, $.packed_dimension, $._constant_part_select_range, $._part_select_range],
   ],
 });

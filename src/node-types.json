@@ -11663,6 +11663,10 @@
           "named": true
         },
         {
+          "type": "function_subroutine_call",
+          "named": true
+        },
+        {
           "type": "inc_or_dec_expression",
           "named": true
         },
@@ -11715,7 +11719,7 @@
           "named": true
         },
         {
-          "type": "system_tf_call",
+          "type": "subroutine_call",
           "named": true
         },
         {
@@ -11892,18 +11896,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "clocking_event",
-          "named": true
-        },
-        {
-          "type": "data_type",
-          "named": true
-        },
-        {
-          "type": "expression",
-          "named": true
-        },
         {
           "type": "list_of_arguments_parent",
           "named": true

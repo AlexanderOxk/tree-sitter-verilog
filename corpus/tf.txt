@@ -62,8 +62,9 @@ endmodule
                 (statement_or_null
                   (statement
                     (statement_item
-                      (system_tf_call
-                        (system_tf_identifier)))))))))))))
+                      (subroutine_call
+                        (system_tf_call
+                          (system_tf_identifier))))))))))))))
 
 ============================================
 tf - print
@@ -91,22 +92,23 @@ endmodule
                 (statement_or_null
                   (statement
                     (statement_item
-                      (system_tf_call
-                        (system_tf_identifier)
-                        (list_of_arguments_parent
-                          (expression
-                            (primary
-                              (primary_literal
-                                (string_literal))))
-                          (expression
-                            (primary
-                              (simple_identifier)))
-                          (expression
-                            (primary
-                              (simple_identifier)))
-                          (expression
-                            (primary
-                              (simple_identifier))))))))))))))))
+                      (subroutine_call
+                        (system_tf_call
+                          (system_tf_identifier)
+                          (list_of_arguments_parent
+                            (expression
+                              (primary
+                                (primary_literal
+                                  (string_literal))))
+                            (expression
+                              (primary
+                                (simple_identifier)))
+                            (expression
+                              (primary
+                                (simple_identifier)))
+                            (expression
+                              (primary
+                                (simple_identifier)))))))))))))))))
 
 ============================================
 tf - inline
@@ -128,19 +130,20 @@ endmodule
         (statement_or_null
           (statement
             (statement_item
-              (system_tf_call
-                (system_tf_identifier)
-                (list_of_arguments_parent
-                  (expression
-                    (primary
-                      (primary_literal
-                        (string_literal))))
-                  (expression
-                    (primary
-                      (simple_identifier)))
-                  (expression
-                    (primary
-                      (simple_identifier)))
-                  (expression
-                    (primary
-                      (simple_identifier))))))))))))
+              (subroutine_call
+                (system_tf_call
+                  (system_tf_identifier)
+                  (list_of_arguments_parent
+                    (expression
+                      (primary
+                        (primary_literal
+                          (string_literal))))
+                    (expression
+                      (primary
+                        (simple_identifier)))
+                    (expression
+                      (primary
+                        (simple_identifier)))
+                    (expression
+                      (primary
+                        (simple_identifier)))))))))))))
