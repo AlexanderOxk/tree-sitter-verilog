@@ -4153,7 +4153,7 @@ const rules = {
     $.constant_indexed_range
   ),
 
-  constant_range: $ => seq($.constant_expression, ':', $.constant_expression),
+  constant_range: $ => seq($.expression, ':', $.expression),
 
   constant_indexed_range: $ => seq(
     $.constant_expression, choice('+:', '-:'), $.constant_expression
@@ -4864,7 +4864,6 @@ module.exports = grammar({
     [$.scalar_timing_check_condition, $.unary_operator],
     [$.mintypmax_expression, $.scalar_timing_check_condition],
     [$.delayed_data, $.delayed_reference],
-    [$.list_of_arguments_parent, $.system_tf_call],
     [$.class_item_qualifier, $.lifetime],
     [$._property_qualifier, $.method_qualifier],
     [$.class_property, $.data_type_or_implicit1],
@@ -4977,7 +4976,6 @@ module.exports = grammar({
     [$._constant_part_select_range, $.packed_dimension],
     [$._constant_part_select_range, $.packed_dimension, $.unpacked_dimension],
     [$._part_select_range, $.packed_dimension],
-    [$._part_select_range, $.packed_dimension, $.unpacked_dimension],
     [$._constant_part_select_range, $._part_select_range],
     [$._constant_part_select_range, $._part_select_range, $.packed_dimension],
     [$.inout_port_identifier, $.input_port_identifier],

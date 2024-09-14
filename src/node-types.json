@@ -2854,7 +2854,7 @@
       "required": true,
       "types": [
         {
-          "type": "constant_expression",
+          "type": "expression",
           "named": true
         }
       ]

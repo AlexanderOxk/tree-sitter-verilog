@@ -27862,7 +27862,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "constant_expression"
+          "name": "expression"
         },
         {
           "type": "STRING",
@@ -27870,7 +27870,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "constant_expression"
+          "name": "expression"
         }
       ]
     },
@@ -31670,10 +31670,6 @@
       "delayed_reference"
     ],
     [
-      "list_of_arguments_parent",
-      "system_tf_call"
-    ],
-    [
       "class_item_qualifier",
       "lifetime"
     ],
@@ -32277,11 +32273,6 @@
     [
       "_part_select_range",
       "packed_dimension"
-    ],
-    [
-      "_part_select_range",
-      "packed_dimension",
-      "unpacked_dimension"
     ],
     [
       "_constant_part_select_range",
